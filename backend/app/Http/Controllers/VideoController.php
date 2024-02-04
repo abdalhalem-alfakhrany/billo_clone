@@ -18,8 +18,7 @@ class VideoController extends Controller
     {
         /** @var /home/abdalhalem/DEV/billo_clone/backend/app/Models/User.php @instance */
         $user = Auth::user();
-        $user->can('viewAny');
-        return response()->json(['message' => 'user videos retrieved successfully', 'data' => $user->videos()->toArray()], 200);
+        return response()->json(['message' => 'user videos retrieved successfully', 'data' => $user->videos()->get()], 200);
     }
 
     /**
